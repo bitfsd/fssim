@@ -14,7 +14,7 @@ FSSIM is developed by [Juraj Kabzan](https://www.linkedin.com/in/juraj-kabzan-14
 
 this ROS package is converted from [AMZ-Driverless](https://github.com/AMZ-Driverless/fssim)
 
-We added two cameras into simulator and changed the ground so that it is more like the true world.
+We added two cameras into simulator and changed the ground so that it is more similar to the true world.
 
 <p align="center"> 
 <img src="fssim_doc/img/cameras.png">
