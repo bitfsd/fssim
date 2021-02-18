@@ -1,15 +1,18 @@
 <p align="center"> 
-<img src="src/fssim/fssim_doc/img/fssim_logo.png">
+<img src="fssim_doc/img/fssim_logo.png">
 </p>
+
 
 # FSSIM 
 FSSIM is a vehicle simulator dedicated for Formula Student Driverless Competition. It was developed for autonomous software testing purposes and not for gaming. A version of this simulator was used to predict **lap time of *gotthard* at FSAC 2020** trackdrive with **1% accuracy**. 
 
 This simulator is developed and tested on **Ubuntu 18.04 and ROS Melodic** and both are assumed to be already installed.
 
-The more extensive tutorial can be found under [Wiki](src/fssim/fssim_doc/index.md)
+The more extensive tutorial can be found under [Wiki](fssim_doc/index.md)
 
 FSSIM is developed by [Juraj Kabzan](https://www.linkedin.com/in/juraj-kabzan-143698a1/) as part of our work at [AMZ-Driverless](http://driverless.amzracing.ch/).
+
+this ROS package is converted from [AMZ-Driverless](https://github.com/AMZ-Driverless/fssim)
 
 # How to Run It in your Workspace
 0. Install `sudo apt install ros-melodic-desktop-full` and `sudo apt install python-catkin-tools`
@@ -23,15 +26,15 @@ FSSIM is developed by [Juraj Kabzan](https://www.linkedin.com/in/juraj-kabzan-14
 
 # Combine it with simple FSD skeleton Framework and drive a lap
 0. Install `sudo apt install ros-melodic-desktop-full` and `sudo apt install python-catkin-tools`
-1. [Clone the BITFSD2021 workspace](https://gitlab.com/bitfsd/as2021/BITFSD2021).
-2. For more details, please go to BITFSD2021 package.
+1. [Clone the BITFSD Algorithm](https://github.com/bitfsd/fsd_algorithm).
+2. For more details, please go to fsd_algorithm package.
 
 
 # Features
 * This simulator is targeted for FSD competition, thus it contains some of the real-car safety features
   * **RES (Remote Emergency Stop)**: The vehicle will not be able to be controlled if a `/fssim/res_state/push_button = true` is not sent. On the other side, if  `/fssim/res_state/emergency = true` is send, the vehicle will stop immediately. If you start FSSIM with `roslaunch fssim auto_fssim.launch` or through `fssim_interface` this is done automatically.
   * **Leaving Track**: If the simulation is started with `auto_fssim.launch`, an automated RES person is launched. This means, if the vehicle exists the track with all four wheels, RES-emergency will be send and the simulation will exit itself
-* FSSIM does not simulate the RAW sensors! It uses a **cone-sensor-model** instead. This means a cone observations around the vehicle are simulated with numerous noise-models.  The configuration file for this sensors can be found in [fssim/fssim_description/cars/gotthard/config/sensors.yaml](src/fssim/fssim_description/cars/gotthard/config/sensors.yaml). Thanks to this simplification it is real-time capable
+* FSSIM does not simulate the RAW sensors! It uses a **cone-sensor-model** instead. This means a cone observations around the vehicle are simulated with numerous noise-models.  The configuration file for this sensors can be found in [fssim_description/cars/gotthard/config/sensors.yaml](fssim_description/cars/gotthard/config/sensors.yaml). Thanks to this simplification it is real-time capable
 * FSSIM does not use GAZEBO Physics Engine to simulate the vehicle. Instead, it uses a basic **vehicle model** which is discretized with Euler Forward discretization and overwrites the model pose. This feature allows the simulated model to match closely the real world car.
 * **Automated Run** of multiple scenarios with different configurations and save logs as well as report.
 * Lap-time counter
@@ -41,12 +44,13 @@ FSSIM is developed by [Juraj Kabzan](https://www.linkedin.com/in/juraj-kabzan-14
 
 # Example
 <p align="center"> 
-<img src="src/fssim/fssim_doc/img/fssim_demo.gif" width="700" />
+<img src="fssim_doc/img/fssim_demo.gif" width="700" />
 </p>
 
 A note: this is a public copy of a private version. The public version might have some internal functionality removed.
 FSSIM was developed by
 
 <p align="center"> 
-<img src="src/fssim/fssim_doc/img/BITFSD Racing Team.png">
+<img src="fssim_doc/img/BITFSD Racing Team.png">
 </p>
+
