@@ -24,7 +24,7 @@ We added two cameras into simulator and changed the ground so that it is more si
 0. Install `sudo apt install ros-melodic-desktop-full` and `sudo apt install python-catkin-tools`
 1. Clone this repository to an existing **ROS Workspace** initialized with `catkin init`
 2. Run `cd BITFSDsim/src/fssim/` from home.
-3. Run `source Download_model.sh` to download gazebo models or the default website will stop the simulation.
+3. Run `sudo bash Download_model.sh` to download gazebo models or the default website will stop the simulation.
 3. Run `catkin build`
 4. Source the workspace
 5. After successful building, run the simulator with `roslaunch fssim auto_fssim.launch`. RVIZ window will start. NOTE: You might need to untick and tick `FSSIM Track` and `RobotModel` in RVIZ in order to load the STL files. NOTE: This ` [Wrn] [ModelDatabase.cc:339] Getting models from[http://gazebosim.org/models/]. This may take a few seconds.` will stop the simulation. Check step.2, or disconnect the Internet and go on.
